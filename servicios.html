@@ -8,13 +8,32 @@
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;900&display=swap" rel="stylesheet">
     <style>
+        /* Header personalizado para servicios */
+        .header {
+            position: relative;
+        }
+
+        .branding-text {
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            margin: 0;
+            z-index: 10;
+        }
+
+        .header-left {
+            width: 0;
+            overflow: hidden;
+        }
+
         .servicios-main {
             display: flex;
             flex-direction: column;
             padding-top: calc(16px * var(--scale));
             min-height: 100vh;
             overflow-y: auto;
-            padding-bottom: calc(300px * var(--scale));
+            padding-bottom: 0;
             background: #ffffff;
         }
 
@@ -84,12 +103,52 @@
 
         /* Scroll Horizontal de Beneficios */
         .benefits-scroll-section {
-            padding: calc(48px * var(--scale)) 0 calc(80px * var(--scale)) 0;
+            padding: calc(48px * var(--scale)) 0 calc(300px * var(--scale)) 0;
             background: #f8f9fa;
             overflow-x: auto;
             overflow-y: hidden;
             -webkit-overflow-scrolling: touch;
-            margin-bottom: calc(48px * var(--scale));
+            margin-bottom: calc(100px * var(--scale));
+            position: relative;
+        }
+
+        /* Botones de navegación para el scroll horizontal - Franja independiente */
+        .scroll-navigation {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: calc(30px * var(--scale));
+            padding: calc(16px * var(--scale)) calc(24px * var(--scale));
+            background: #ffffff;
+            border-top: calc(1px * var(--scale)) solid rgba(88, 129, 87, 0.1);
+            border-bottom: calc(1px * var(--scale)) solid rgba(88, 129, 87, 0.1);
+        }
+
+        .scroll-btn {
+            width: calc(60px * var(--scale));
+            height: calc(60px * var(--scale));
+            border-radius: 50%;
+            background: linear-gradient(135deg, #588157, #3a5a40);
+            color: #ffffff;
+            border: none;
+            font-size: calc(28px * var(--scale));
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 calc(4px * var(--scale)) calc(12px * var(--scale)) rgba(88, 129, 87, 0.3);
+        }
+
+        .scroll-btn:hover {
+            transform: translateY(calc(-2px * var(--scale)));
+            box-shadow: 0 calc(6px * var(--scale)) calc(16px * var(--scale)) rgba(88, 129, 87, 0.4);
+        }
+
+        .scroll-btn:active {
+            transform: translateY(0);
+            box-shadow: 0 calc(2px * var(--scale)) calc(8px * var(--scale)) rgba(88, 129, 87, 0.3);
         }
 
         .benefits-scroll-container {
@@ -451,8 +510,12 @@
             }
 
             .benefits-scroll-section {
-                padding: calc(64px * var(--scale)) 0 calc(80px * var(--scale)) 0;
-                margin-bottom: calc(48px * var(--scale));
+                padding: calc(64px * var(--scale)) 0 calc(600px * var(--scale)) 0;
+                margin-bottom: calc(100px * var(--scale));
+            }
+
+            .scroll-navigation {
+                display: none;
             }
 
             .benefits-scroll-container {
@@ -557,6 +620,61 @@
                 padding: calc(20px * var(--scale)) calc(48px * var(--scale));
             }
         }
+
+        /* ========================================
+           FOOTER - Final del contenido (scroll hasta aquí)
+           ======================================== */
+        .footer-home {
+            width: 100%;
+            padding: calc(32px * var(--scale)) calc(24px * var(--scale));
+            background: #344E41;
+            text-align: center;
+            margin-top: auto;
+        }
+
+        .footer-contact {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: calc(12px * var(--scale));
+            margin-bottom: calc(20px * var(--scale));
+        }
+
+        .footer-link {
+            font-family: 'Montserrat', sans-serif;
+            font-size: calc(12px * var(--scale));
+            font-weight: 600;
+            color: #A3B18A;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-link:hover {
+            color: #DAD7CD;
+        }
+
+        .footer-separator {
+            color: #588157;
+            font-weight: 300;
+        }
+
+        .footer-legal {
+            font-family: 'Montserrat', sans-serif;
+            font-size: calc(10px * var(--scale));
+            font-weight: 400;
+            color: #A3B18A;
+            line-height: 1.6;
+        }
+
+        .footer-legal p {
+            margin: calc(4px * var(--scale)) 0;
+        }
+
+        .footer-rut {
+            font-size: calc(9px * var(--scale));
+            opacity: 0.8;
+        }
     </style>
 </head>
 <body>
@@ -571,8 +689,8 @@
             </div>
 
             <header class="header">
+                <div class="branding-text">CONTROL DE PLAGAS</div>
                 <div class="header-left">
-                    <div class="branding-text">CONTROL DE PLAGAS</div>
                 </div>
                 <div class="header-center"></div>
                 <div class="header-right" id="menu-button">MENU</div>
@@ -692,8 +810,8 @@
                 </section>
 
                 <!-- Scroll Horizontal de Beneficios -->
-                <section class="benefits-scroll-section">
-                    <div class="benefits-scroll-container">
+                <section class="benefits-scroll-section" id="benefitsScrollSection">
+                    <div class="benefits-scroll-container" id="benefitsContainer">
                         <div class="benefit-card">
                             <div class="benefit-shape"></div>
                             <div class="benefit-number">01</div>
@@ -733,6 +851,12 @@
                     </div>
                 </section>
 
+                <!-- Botones de navegación - Sección independiente -->
+                <section class="scroll-navigation">
+                    <button class="scroll-btn scroll-left" id="scrollLeft">←</button>
+                    <button class="scroll-btn scroll-right" id="scrollRight">→</button>
+                </section>
+
                 <!-- Espaciador -->
                 <div class="section-spacer"></div>
 
@@ -742,6 +866,19 @@
                     <p class="cta-text">Nuestro equipo de expertos está listo para evaluar tu situación y ofrecerte la mejor solución. Contáctanos hoy para una cotización gratuita.</p>
                     <a href="contacto.html" class="btn-cta">Solicitar Cotización</a>
                 </section>
+
+                <!-- FOOTER -->
+                <footer class="footer-home">
+                    <div class="footer-contact">
+                        <a href="tel:+56978630975" class="footer-link">📞 +569 7863 0975</a>
+                        <span class="footer-separator">|</span>
+                        <a href="mailto:bugsbreaking@gmail.com" class="footer-link">📧 bugsbreaking@gmail.com</a>
+                    </div>
+                    <div class="footer-legal">
+                        <p>© 2025 Breaking Bugs - Control de Plagas Profesional. Todos los derechos reservados.</p>
+                        <p class="footer-rut">COPLASAN LIMITADA | RUT: 77.584.666-6</p>
+                    </div>
+                </footer>
 
             </main>
 
@@ -760,6 +897,30 @@
             setTimeout(() => {
                 yellowCurtain.classList.remove('show');
             }, 600);
+
+            // Navegación de scroll horizontal para benefit cards
+            const benefitsSection = document.getElementById('benefitsScrollSection');
+            const scrollContainer = document.getElementById('benefitsContainer');
+            const scrollLeftBtn = document.getElementById('scrollLeft');
+            const scrollRightBtn = document.getElementById('scrollRight');
+
+            if (scrollLeftBtn && scrollRightBtn && benefitsSection) {
+                scrollLeftBtn.addEventListener('click', () => {
+                    console.log('Scroll left clicked');
+                    benefitsSection.scrollBy({
+                        left: -320,
+                        behavior: 'smooth'
+                    });
+                });
+
+                scrollRightBtn.addEventListener('click', () => {
+                    console.log('Scroll right clicked');
+                    benefitsSection.scrollBy({
+                        left: 320,
+                        behavior: 'smooth'
+                    });
+                });
+            }
 
             menuButton.addEventListener('click', function(e) {
                 e.stopPropagation();
