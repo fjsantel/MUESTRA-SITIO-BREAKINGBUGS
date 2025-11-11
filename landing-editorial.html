@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Control de Plagas Profesional - Editorial Landing</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="landing-editorial.css">
+    <link href="https://fonts.googleapis.com/css2?family=Author:wght@400;600&family=Author+Variable:wght@400..700&display=swap" rel="stylesheet">
+    <link href="https://api.fontshare.com/v2/css?f[]=bespoke-serif@1&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="mobile-frame">
+        <div class="bp-display" id="bp-display">BP: Default</div>
+        <div class="main-container">
+
+            <!-- Cortina de transición -->
+            <div class="yellow-curtain" id="yellow-curtain">
+                <div class="curtain-content">
+                    <div class="curtain-text">BREAKING BUGS</div>
+                </div>
+            </div>
+
+            <!-- Header con tu diseño original -->
+            <header class="header">
+                <div class="header-left">
+                    <div class="branding-text"></div>
+                </div>
+                <div class="header-center"></div>
+                <div class="header-right" id="menu-button">MENU</div>
+                <div class="dropdown-menu" id="dropdown-menu">
+                    <div class="menu-item" data-page="index">INICIO</div>
+                    <div class="menu-item" data-page="servicios">SERVICIOS</div>
+                    <div class="menu-item" data-page="nosotros">NOSOTROS</div>
+                    <div class="menu-item" data-page="contacto">CONTACTO</div>
+                </div>
+            </header>
+
+            <!-- Contenido editorial -->
+            <main class="editorial-content">
+
+                <!-- HERO SECTION - Tipografía grande + imagen -->
+                <section class="hero-editorial">
+                    <div class="hero-text-block">
+                        <h1 class="hero-title-large">PROTECCIÓN<br>ABSOLUTA</h1>
+                        <p class="hero-subtitle">Soluciones profesionales para espacios libres de plagas</p>
+                    </div>
+                    <div class="hero-image-block">
+                        <div class="image-placeholder">
+                            <!-- Aquí irá imagen fullwidth -->
+                            <div class="placeholder-content">
+                                <span>IMAGEN HERO</span>
+                                <small>1200x600px</small>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- BLOQUE 1: Texto + Imagen lado a lado -->
+                <section class="block-split">
+                    <div class="block-text">
+                        <h2 class="block-title">Expertos en<br>Control Integral</h2>
+                        <p class="block-paragraph">
+                            Con más de 15 años de experiencia, ofrecemos soluciones certificadas
+                            que garantizan espacios seguros y saludables. Nuestro equipo utiliza
+                            tecnología de vanguardia y productos autorizados por el ISP para
+                            resultados duraderos y efectivos.
+                        </p>
+                        <p class="block-paragraph">
+                            Cada intervención es diseñada específicamente para las necesidades
+                            de tu espacio, garantizando mínima interrupción y máxima efectividad.
+                        </p>
+                        <button class="btn-action">Conocer Más</button>
+                    </div>
+                    <div class="block-image">
+                        <div class="image-placeholder">
+                            <div class="placeholder-content">
+                                <span>TÉCNICO TRABAJANDO</span>
+                                <small>800x600px</small>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SLIDER LATERAL - Servicios -->
+                <section class="slider-section">
+                    <div class="slider-header">
+                        <h2 class="section-title-large">SERVICIOS</h2>
+                        <div class="slider-controls">
+                            <button class="slider-btn" id="slider-prev">←</button>
+                            <span class="slider-counter" id="slider-counter">01 / 04</span>
+                            <button class="slider-btn" id="slider-next">→</button>
+                        </div>
+                    </div>
+                    <div class="slider-container">
+                        <div class="slider-track" id="slider-track">
+
+                            <!-- Slide 1 -->
+                            <div class="slide-item">
+                                <div class="slide-image">
+                                    <div class="image-placeholder">
+                                        <div class="placeholder-content">
+                                            <span>CONTROL ROEDORES</span>
+                                            <small>600x400px</small>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="slide-content">
+                                    <h3 class="slide-title">Control de Roedores</h3>
+                                    <p class="slide-description">
+                                        Desratización profesional con sistemas de monitoreo continuo
+                                        y cebos certificados. Resultados garantizados.
+                                    </p>
+                                    <button class="btn-slide">Solicitar Servicio</button>
+                                </div>
+                            </div>
+
+                            <!-- Slide 2 -->
+                            <div class="slide-item">
+                                <div class="slide-image">
+                                    <div class="image-placeholder">
+                                        <div class="placeholder-content">
+                                            <span>FUMIGACIÓN</span>
+                                            <small>600x400px</small>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="slide-content">
+                                    <h3 class="slide-title">Fumigación Integral</h3>
+                                    <p class="slide-description">
+                                        Eliminación de insectos con productos biodegradables y
+                                        tecnología avanzada. Sin olor ni manchas.
+                                    </p>
+                                    <button class="btn-slide">Solicitar Servicio</button>
+                                </div>
+                            </div>
+
+                            <!-- Slide 3 -->
+                            <div class="slide-item">
+                                <div class="slide-image">
+                                    <div class="image-placeholder">
+                                        <div class="placeholder-content">
+                                            <span>SANITIZACIÓN</span>
+                                            <small>600x400px</small>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="slide-content">
+                                    <h3 class="slide-title">Sanitización Profesional</h3>
+                                    <p class="slide-description">
+                                        Desinfección completa con certificación MINSAL.
+                                        Espacios seguros e higiénicos garantizados.
+                                    </p>
+                                    <button class="btn-slide">Solicitar Servicio</button>
+                                </div>
+                            </div>
+
+                            <!-- Slide 4 -->
+                            <div class="slide-item">
+                                <div class="slide-image">
+                                    <div class="image-placeholder">
+                                        <div class="placeholder-content">
+                                            <span>TERMITAS</span>
+                                            <small>600x400px</small>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="slide-content">
+                                    <h3 class="slide-title">Control de Termitas</h3>
+                                    <p class="slide-description">
+                                        Protección estructural con garantía extendida.
+                                        Detección temprana y eliminación definitiva.
+                                    </p>
+                                    <button class="btn-slide">Solicitar Servicio</button>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </section>
+
+                <!-- BLOQUE 2: Imagen + Texto invertido -->
+                <section class="block-split block-reverse">
+                    <div class="block-image">
+                        <div class="image-placeholder">
+                            <div class="placeholder-content">
+                                <span>CERTIFICACIONES</span>
+                                <small>800x600px</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="block-text">
+                        <h2 class="block-title">Certificados y<br>Respaldados</h2>
+                        <p class="block-paragraph">
+                            Cumplimos con todas las normativas vigentes del ISP y MINSAL.
+                            Nuestros técnicos están certificados y actualizados en las últimas
+                            técnicas de control de plagas y manejo integrado.
+                        </p>
+                        <p class="block-paragraph">
+                            Cada servicio incluye documentación completa y certificados
+                            de sanitización que respaldan la calidad de nuestro trabajo.
+                        </p>
+                        <button class="btn-action">Ver Certificaciones</button>
+                    </div>
+                </section>
+
+                <!-- BLOQUE FULL WIDTH - Estadísticas -->
+                <section class="stats-block">
+                    <h2 class="section-title-large">RESULTADOS</h2>
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <div class="stat-number">15+</div>
+                            <div class="stat-label">Años de experiencia</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">2,000+</div>
+                            <div class="stat-label">Clientes satisfechos</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">98%</div>
+                            <div class="stat-label">Efectividad garantizada</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">24/7</div>
+                            <div class="stat-label">Atención emergencias</div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- BLOQUE 3: Solo texto centrado con mucho aire -->
+                <section class="block-centered">
+                    <div class="centered-content">
+                        <h2 class="block-title-centered">Tu tranquilidad,<br>nuestra prioridad</h2>
+                        <p class="block-paragraph-centered">
+                            Entendemos que un problema de plagas puede afectar tu negocio,
+                            tu salud y tu bienestar. Por eso ofrecemos respuestas rápidas,
+                            soluciones efectivas y seguimiento continuo para garantizar
+                            espacios libres de plagas a largo plazo.
+                        </p>
+                        <button class="btn-action-large">Solicitar Cotización Gratis</button>
+                    </div>
+                </section>
+
+                <!-- BLOQUE IMAGEN FULLWIDTH -->
+                <section class="full-image-block">
+                    <div class="image-placeholder">
+                        <div class="placeholder-content">
+                            <span>IMAGEN IMPACTO FULLWIDTH</span>
+                            <small>1400x500px</small>
+                        </div>
+                    </div>
+                    <div class="image-overlay-text">
+                        <h3>"Trabajamos para que puedas vivir y trabajar sin preocupaciones"</h3>
+                    </div>
+                </section>
+
+                <!-- FOOTER CTA -->
+                <section class="footer-cta">
+                    <h2 class="cta-title">¿Listo para un espacio libre de plagas?</h2>
+                    <p class="cta-text">Contáctanos hoy y recibe una evaluación gratuita</p>
+                    <div class="cta-buttons">
+                        <button class="btn-cta-primary">Contactar Ahora</button>
+                        <button class="btn-cta-secondary">Ver Servicios</button>
+                    </div>
+                    <div class="footer-info">
+                        <p>📞 +56 9 1234 5678  |  📧 contacto@controlplagas.cl</p>
+                        <p class="footer-copy">© 2025 Control de Plagas Profesional. Todos los derechos reservados.</p>
+                    </div>
+                </section>
+
+            </main>
+
+        </div>
+    </div>
+
+    <script src="landing-editorial.js"></script>
+</body>
+</html>

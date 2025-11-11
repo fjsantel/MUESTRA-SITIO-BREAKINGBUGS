@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servicios de Control de Plagas Certificado | Breaking Bugs Santiago</title>
+    <meta name="description" content="Servicios profesionales de control de plagas: desratización, desinsectación, desinfección y sanitización. Certificados MINSAL y SAG. Cobertura nacional.">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        .servicios-main {
+            display: flex;
+            flex-direction: column;
+            padding-top: calc(16px * var(--scale));
+            min-height: calc(100% - 48px * var(--scale));
+            overflow-y: auto;
+            padding-bottom: calc(120px * var(--scale));
+            background: #ffffff;
+        }
+
+        /* Hero Section */
+        .servicios-hero {
+            padding: calc(48px * var(--scale)) calc(24px * var(--scale));
+            text-align: center;
+            background: linear-gradient(135deg, #588157, #3a5a40);
+            margin-bottom: calc(48px * var(--scale));
+        }
+
+        .hero-title-servicios {
+            font-family: 'Montserrat', sans-serif;
+            font-size: calc(32px * var(--scale));
+            font-weight: 900;
+            color: #ffffff;
+            margin-bottom: calc(16px * var(--scale));
+            line-height: 1.2;
+            text-transform: uppercase;
+            letter-spacing: calc(-0.5px * var(--scale));
+        }
+
+        .hero-subtitle-servicios {
+            font-family: 'Montserrat', sans-serif;
+            font-size: calc(13px * var(--scale));
+            font-weight: 400;
+            color: rgba(255, 255, 255, 0.95);
+            line-height: 1.5;
+            margin-bottom: 0;
+        }
+
+        /* Sección Inspiracional */
+        .inspirational-section {
+            padding: calc(64px * var(--scale)) calc(24px * var(--scale));
+            background: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .inspirational-content {
+            max-width: calc(800px * var(--scale));
+            text-align: center;
+        }
+
+        .inspirational-quote {
+            font-family: 'Montserrat', sans-serif;
+            font-size: calc(20px * var(--scale));
+            font-weight: 300;
+            color: #344E41;
+            line-height: 1.5;
+            font-style: italic;
+            margin: 0;
+            position: relative;
+        }
+
+        .inspirational-quote::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: calc(-20px * var(--scale));
+            transform: translateX(-50%);
+            width: calc(60px * var(--scale));
+            height: calc(2px * var(--scale));
+            background: linear-gradient(90deg, transparent, #A3B18A, transparent);
+        }
+
+        /* Scroll Horizontal de Beneficios */
+        .benefits-scroll-section {
+            padding: calc(48px * var(--scale)) 0 calc(64px * var(--scale)) 0;
+            background: #f8f9fa;
+            overflow-x: auto;
+            overflow-y: hidden;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .benefits-scroll-container {
+            display: flex;
+            gap: calc(20px * var(--scale));
+            padding: 0 calc(24px * var(--scale)) calc(24px * var(--scale)) calc(24px * var(--scale));
+            min-width: min-content;
+        }
+
+        .benefit-card {
+            position: relative;
+            min-width: calc(280px * var(--scale));
+            padding: calc(56px * var(--scale)) calc(24px * var(--scale)) calc(32px * var(--scale)) calc(24px * var(--scale));
+            background: #ffffff;
+            border-radius: calc(16px * var(--scale));
+            box-shadow: 0 calc(2px * var(--scale)) calc(12px * var(--scale)) rgba(52, 78, 65, 0.08);
+            transition: all 0.3s ease;
+            overflow: visible;
+        }
+
+        .benefit-card:hover {
+            transform: translateY(calc(-4px * var(--scale)));
+            box-shadow: 0 calc(8px * var(--scale)) calc(24px * var(--scale)) rgba(52, 78, 65, 0.15);
+        }
+
+        .benefit-shape {
+            position: absolute;
+            bottom: calc(-20px * var(--scale));
+            right: calc(-20px * var(--scale));
+            width: calc(100px * var(--scale));
+            height: calc(100px * var(--scale));
+            background: linear-gradient(135deg, rgba(163, 177, 138, 0.08), rgba(88, 129, 87, 0.03));
+            border-radius: 50%;
+            z-index: 0;
+        }
+
+        .benefit-number {
+            position: absolute;
+            top: calc(-12px * var(--scale));
+            left: calc(20px * var(--scale));
+            font-family: 'Montserrat', sans-serif;
+            font-size: calc(18px * var(--scale));
+            font-weight: 900;
+            color: #ffffff;
+            background: linear-gradient(135deg, #588157, #3a5a40);
+            width: calc(48px * var(--scale));
+            height: calc(48px * var(--scale));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 calc(4px * var(--scale)) calc(12px * var(--scale)) rgba(88, 129, 87, 0.3);
+            z-index: 2;
+        }
+
+        .benefit-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: calc(16px * var(--scale));
+            font-weight: 700;
+            color: #344E41;
+            margin-bottom: calc(12px * var(--scale));
+            text-transform: uppercase;
+            letter-spacing: calc(0.5px * var(--scale));
+            position: relative;
+            z-index: 1;
+        }
+
+        .benefit-text {
+            font-family: 'Montserrat', sans-serif;
+            font-size: calc(12px * var(--scale));
+            font-weight: 400;
+            color: #588157;
+            line-height: 1.6;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Grid de Servicios */
+        .servicios-grid {
+            display: flex;
+            flex-direction: column;
+            gap: calc(32px * var(--scale));
+            padding: 0 calc(20px * var(--scale));
+            max-width: calc(1200px * var(--scale));
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        /* Cards de Servicio */
+        .servicio-card {
+            display: flex;
+            flex-direction: column;
+            border-radius: calc(16px * var(--scale));
+            background: #ffffff;
+            overflow: hidden;
+            box-shadow: 0 calc(2px * var(--scale)) calc(8px * var(--scale)) rgba(52, 78, 65, 0.08);
+            transition: all 0.3s ease;
+            border: calc(1px * var(--scale)) solid rgba(88, 129, 87, 0.1);
+        }
+
+        .servicio-card:hover {
+            transform: translateY(calc(-6px * var(--scale)));
+            box-shadow: 0 calc(8px * var(--scale)) calc(24px * var(--scale)) rgba(52, 78, 65, 0.15);
+        }
+
+        /* Placeholder de Imagen con Triángulo */
+        .card-image-placeholder {
+            position: relative;
+            width: 100%;
+            height: calc(200px * var(--scale));
+            background: linear-gradient(135deg, #DAD7CD, #A3B18A);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .triangle-decorator {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 0 calc(80px * var(--scale)) calc(80px * var(--scale)) 0;
+            border-color: transparent #588157 transparent transparent;
+        }
+
+        .placeholder-text {
+            font-family: 'Montserrat', sans-serif;
+            font-size: calc(14px * var(--scale));
+            font-weight: 600;
+            color: #344E41;
+            text-align: center;
+            z-index: 1;
+        }
+
+        .card-header {
+            background: linear-gradient(135deg, #588157, #3a5a40);
+            padding: calc(20px * var(--scale));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .card-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: calc(16px * var(--scale));
+            font-weight: 700;
+            color: #ffffff;
+            text-transform: uppercase;
+            letter-spacing: calc(0.5px * var(--scale));
+            text-align: center;
+        }
+
+        .card-body {
+            padding: calc(24px * var(--scale));
+            background: #ffffff;
+        }
+
+        .card-subtitle {
+            font-family: 'Montserrat', sans-serif;
+            font-size: calc(12px * var(--scale));
+            font-weight: 600;
+            color: #344E41;
+            margin-bottom: calc(12px * var(--scale));
+            text-transform: uppercase;
+            letter-spacing: calc(0.3px * var(--scale));
+        }
+
+        .card-description {
+            font-family: 'Montserrat', sans-serif;
+            font-size: calc(11px * var(--scale));
+            font-weight: 400;
+            color: #3a5a40;
+            line-height: 1.6;
+            margin-bottom: calc(16px * var(--scale));
+        }
+
+        .card-features {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 calc(16px * var(--scale)) 0;
+        }
+
+        .card-features li {
+            font-family: 'Montserrat', sans-serif;
+            font-size: calc(10px * var(--scale));
+            font-weight: 400;
+            color: #588157;
+            line-height: 1.7;
+            padding-left: calc(20px * var(--scale));
+            position: relative;
+            margin-bottom: calc(8px * var(--scale));
+        }
+
+        .card-features li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #588157;
+            font-weight: 900;
+            font-size: calc(14px * var(--scale));
+        }
+
+        .card-ideal {
+            font-family: 'Montserrat', sans-serif;
+            font-size: calc(9px * var(--scale));
+            font-weight: 400;
+            color: #A3B18A;
+            font-style: italic;
+            line-height: 1.5;
+            padding-top: calc(12px * var(--scale));
+            border-top: calc(1px * var(--scale)) solid rgba(163, 177, 138, 0.2);
+            margin-bottom: calc(16px * var(--scale));
+        }
+
+        /* Botón Contratar en Card */
+        .btn-contratar {
+            display: inline-block;
+            font-family: 'Montserrat', sans-serif;
+            font-size: calc(11px * var(--scale));
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: calc(0.5px * var(--scale));
+            padding: calc(10px * var(--scale)) calc(20px * var(--scale));
+            background: linear-gradient(135deg, #588157, #3a5a40);
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: calc(6px * var(--scale));
+            transition: all 0.3s ease;
+            box-shadow: 0 calc(2px * var(--scale)) calc(8px * var(--scale)) rgba(88, 129, 87, 0.3);
+            align-self: flex-start;
+        }
+
+        .btn-contratar:hover {
+            transform: translateY(calc(-2px * var(--scale)));
+            box-shadow: 0 calc(4px * var(--scale)) calc(12px * var(--scale)) rgba(88, 129, 87, 0.4);
+            background: linear-gradient(135deg, #3a5a40, #588157);
+        }
+
+        /* CTA Section */
+        .servicios-cta {
+            margin-top: calc(64px * var(--scale));
+            padding: calc(48px * var(--scale)) calc(24px * var(--scale));
+            background: linear-gradient(135deg, #588157, #3a5a40);
+            text-align: center;
+        }
+
+        .cta-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: calc(24px * var(--scale));
+            font-weight: 900;
+            color: #ffffff;
+            margin-bottom: calc(16px * var(--scale));
+            text-transform: uppercase;
+        }
+
+        .cta-text {
+            font-family: 'Montserrat', sans-serif;
+            font-size: calc(12px * var(--scale));
+            font-weight: 400;
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.6;
+            margin-bottom: calc(24px * var(--scale));
+            max-width: calc(500px * var(--scale));
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .btn-cta {
+            display: inline-block;
+            font-family: 'Montserrat', sans-serif;
+            font-size: calc(13px * var(--scale));
+            font-weight: 700;
+            text-transform: uppercase;
+            padding: calc(16px * var(--scale)) calc(36px * var(--scale));
+            background: #ffffff;
+            color: #344E41;
+            text-decoration: none;
+            border-radius: calc(8px * var(--scale));
+            transition: all 0.3s ease;
+        }
+
+        .btn-cta:hover {
+            transform: translateY(calc(-2px * var(--scale)));
+            box-shadow: 0 calc(6px * var(--scale)) calc(16px * var(--scale)) rgba(0, 0, 0, 0.2);
+        }
+
+        /* Responsive Tablet */
+        @media (min-width: 416px) and (max-width: 768px) {
+            .servicios-grid {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: calc(24px * var(--scale));
+            }
+
+            .hero-title-servicios {
+                font-size: calc(38px * var(--scale));
+            }
+
+            .hero-subtitle-servicios {
+                font-size: calc(14px * var(--scale));
+            }
+
+            .card-title {
+                font-size: calc(14px * var(--scale));
+            }
+
+            .card-description {
+                font-size: calc(10px * var(--scale));
+            }
+
+            .card-features li {
+                font-size: calc(9px * var(--scale));
+            }
+        }
+
+        /* Responsive Desktop */
+        @media (min-width: 769px) {
+            .servicios-hero {
+                padding: calc(80px * var(--scale)) calc(32px * var(--scale));
+            }
+
+            .hero-title-servicios {
+                font-size: calc(56px * var(--scale));
+            }
+
+            .hero-subtitle-servicios {
+                font-size: calc(18px * var(--scale));
+                max-width: calc(700px * var(--scale));
+                margin: 0 auto;
+            }
+
+            .inspirational-section {
+                padding: calc(96px * var(--scale)) calc(32px * var(--scale));
+            }
+
+            .inspirational-quote {
+                font-size: calc(32px * var(--scale));
+            }
+
+            .benefits-scroll-section {
+                padding: calc(64px * var(--scale)) 0;
+            }
+
+            .benefits-scroll-container {
+                justify-content: center;
+                flex-wrap: wrap;
+                padding: 0 calc(32px * var(--scale));
+                max-width: calc(1200px * var(--scale));
+                margin: 0 auto;
+            }
+
+            .benefit-card {
+                min-width: calc(320px * var(--scale));
+                max-width: calc(320px * var(--scale));
+                padding: calc(64px * var(--scale)) calc(28px * var(--scale)) calc(36px * var(--scale)) calc(28px * var(--scale));
+            }
+
+            .benefit-number {
+                font-size: calc(20px * var(--scale));
+                width: calc(56px * var(--scale));
+                height: calc(56px * var(--scale));
+                top: calc(-16px * var(--scale));
+                left: calc(24px * var(--scale));
+            }
+
+            .benefit-title {
+                font-size: calc(18px * var(--scale));
+            }
+
+            .benefit-text {
+                font-size: calc(14px * var(--scale));
+            }
+
+            .servicios-grid {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: calc(40px * var(--scale));
+                padding: 0 calc(32px * var(--scale));
+            }
+
+            .card-image-placeholder {
+                height: calc(250px * var(--scale));
+            }
+
+            .triangle-decorator {
+                border-width: 0 calc(100px * var(--scale)) calc(100px * var(--scale)) 0;
+            }
+
+            .placeholder-text {
+                font-size: calc(16px * var(--scale));
+            }
+
+            .card-header {
+                padding: calc(24px * var(--scale));
+            }
+
+            .card-title {
+                font-size: calc(20px * var(--scale));
+            }
+
+            .card-body {
+                padding: calc(32px * var(--scale));
+            }
+
+            .card-subtitle {
+                font-size: calc(14px * var(--scale));
+            }
+
+            .card-description {
+                font-size: calc(15px * var(--scale));
+            }
+
+            .card-features li {
+                font-size: calc(13px * var(--scale));
+            }
+
+            .card-ideal {
+                font-size: calc(12px * var(--scale));
+            }
+
+            .btn-contratar {
+                font-size: calc(13px * var(--scale));
+                padding: calc(12px * var(--scale)) calc(28px * var(--scale));
+            }
+
+            .servicios-cta {
+                padding: calc(80px * var(--scale)) calc(32px * var(--scale));
+            }
+
+            .cta-title {
+                font-size: calc(38px * var(--scale));
+            }
+
+            .cta-text {
+                font-size: calc(16px * var(--scale));
+                max-width: calc(700px * var(--scale));
+            }
+
+            .btn-cta {
+                font-size: calc(16px * var(--scale));
+                padding: calc(20px * var(--scale)) calc(48px * var(--scale));
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="mobile-frame">
+        <div class="bp-display" id="bp-display">BP: Default</div>
+        <div class="main-container">
+
+            <div class="yellow-curtain" id="yellow-curtain">
+                <div class="curtain-content">
+                    <div class="curtain-text">SERVICIOS</div>
+                </div>
+            </div>
+
+            <header class="header">
+                <div class="header-left">
+                    <div class="branding-text">CONTROL DE PLAGAS</div>
+                </div>
+                <div class="header-center"></div>
+                <div class="header-right" id="menu-button">MENU</div>
+                <div class="dropdown-menu" id="dropdown-menu">
+                    <div class="menu-item" data-page="index">INICIO</div>
+                    <div class="menu-item" data-page="servicios">SERVICIOS</div>
+                    <div class="menu-item" data-page="sectores">SECTORES</div>
+                    <div class="menu-item" data-page="nosotros">NOSOTROS</div>
+                    <div class="menu-item" data-page="contacto">CONTACTO</div>
+                </div>
+            </header>
+
+            <main class="servicios-main">
+
+                <section class="servicios-hero">
+                    <h1 class="hero-title-servicios">NUESTROS SERVICIOS</h1>
+                    <p class="hero-subtitle-servicios">Soluciones profesionales certificadas para cada tipo de plaga</p>
+                </section>
+
+                <section class="servicios-grid">
+
+                    <article class="servicio-card">
+                        <div class="card-image-placeholder">
+                            <div class="triangle-decorator"></div>
+                            <span class="placeholder-text">Imagen de Desratización</span>
+                        </div>
+                        <div class="card-header">
+                            <h3 class="card-title">Desratización</h3>
+                        </div>
+                        <div class="card-body">
+                            <h4 class="card-subtitle">Control Profesional de Roedores</h4>
+                            <p class="card-description">Eliminación efectiva de ratas y ratones con sistemas seguros y certificados.</p>
+                            <ul class="card-features">
+                                <li>Eliminación de ratas y ratones</li>
+                                <li>Sistemas de monitoreo continuo</li>
+                                <li>Productos de baja toxicidad</li>
+                                <li>Métodos seguros para hogares y empresas</li>
+                            </ul>
+                            <p class="card-ideal">Ideal para: Industrias alimentarias, bodegas, restaurantes, hogares</p>
+                            <a href="https://wa.me/56912345678?text=Hola%2C%20necesito%20servicio%20de%20Desratización" class="btn-contratar" target="_blank" rel="noopener">Contratar</a>
+                        </div>
+                    </article>
+
+                    <article class="servicio-card">
+                        <div class="card-image-placeholder">
+                            <div class="triangle-decorator"></div>
+                            <span class="placeholder-text">Imagen de Desinsectación</span>
+                        </div>
+                        <div class="card-header">
+                            <h3 class="card-title">Desinsectación</h3>
+                        </div>
+                        <div class="card-body">
+                            <h4 class="card-subtitle">Erradicación de Insectos Urbanos y Rurales</h4>
+                            <p class="card-description">Control integral de insectos con tecnología profesional y productos autorizados.</p>
+                            <ul class="card-features">
+                                <li>Control de cucarachas, hormigas, pulgas</li>
+                                <li>Eliminación de mosquitos y vectores de virus</li>
+                                <li>Tratamientos preventivos y correctivos</li>
+                                <li>Tecnología de aplicación profesional</li>
+                            </ul>
+                            <p class="card-ideal">Ideal para: Clínicas, colegios, oficinas, casas particulares</p>
+                            <a href="https://wa.me/56912345678?text=Hola%2C%20necesito%20servicio%20de%20Desinsectación" class="btn-contratar" target="_blank" rel="noopener">Contratar</a>
+                        </div>
+                    </article>
+
+                    <article class="servicio-card">
+                        <div class="card-image-placeholder">
+                            <div class="triangle-decorator"></div>
+                            <span class="placeholder-text">Imagen de Desinfección</span>
+                        </div>
+                        <div class="card-header">
+                            <h3 class="card-title">Desinfección</h3>
+                        </div>
+                        <div class="card-body">
+                            <h4 class="card-subtitle">Desinfección de Ambientes Certificada</h4>
+                            <p class="card-description">Eliminación de virus y bacterias con protocolos certificados y productos autorizados.</p>
+                            <ul class="card-features">
+                                <li>Eliminación de virus y bacterias</li>
+                                <li>Protocolos post-COVID</li>
+                                <li>Productos autorizados por Minsal</li>
+                                <li>Certificación de espacios sanitizados</li>
+                            </ul>
+                            <p class="card-ideal">Ideal para: Hospitales, centros de salud, clínicas, centros educacionales</p>
+                            <a href="https://wa.me/56912345678?text=Hola%2C%20necesito%20servicio%20de%20Desinfección" class="btn-contratar" target="_blank" rel="noopener">Contratar</a>
+                        </div>
+                    </article>
+
+                    <article class="servicio-card">
+                        <div class="card-image-placeholder">
+                            <div class="triangle-decorator"></div>
+                            <span class="placeholder-text">Imagen de Sanitización</span>
+                        </div>
+                        <div class="card-header">
+                            <h3 class="card-title">Sanitización</h3>
+                        </div>
+                        <div class="card-body">
+                            <h4 class="card-subtitle">Sanitización Integral de Espacios</h4>
+                            <p class="card-description">Limpieza profunda y sanitización de áreas con protocolos especializados.</p>
+                            <ul class="card-features">
+                                <li>Limpieza profunda y sanitización</li>
+                                <li>Áreas contaminadas o en riesgo</li>
+                                <li>Protocolos especializados</li>
+                                <li>Seguimiento post-servicio</li>
+                            </ul>
+                            <p class="card-ideal">Ideal para: Industrias, centros comerciales, empresas, universidades</p>
+                            <a href="https://wa.me/56912345678?text=Hola%2C%20necesito%20servicio%20de%20Sanitización" class="btn-contratar" target="_blank" rel="noopener">Contratar</a>
+                        </div>
+                    </article>
+
+                </section>
+
+                <!-- Frase Inspiracional -->
+                <section class="inspirational-section">
+                    <div class="inspirational-content">
+                        <h2 class="inspirational-quote">"La prevención es la mejor defensa.<br>La acción rápida, tu mejor aliado."</h2>
+                    </div>
+                </section>
+
+                <!-- Scroll Horizontal de Beneficios -->
+                <section class="benefits-scroll-section">
+                    <div class="benefits-scroll-container">
+                        <div class="benefit-card">
+                            <div class="benefit-shape"></div>
+                            <div class="benefit-number">01</div>
+                            <h3 class="benefit-title">95% Reducción de Enfermedades</h3>
+                            <p class="benefit-text">Un tratamiento profesional reduce hasta un 95% la transmisión de enfermedades como leptospirosis, salmonella y hantavirus transmitidas por roedores e insectos.</p>
+                        </div>
+                        <div class="benefit-card">
+                            <div class="benefit-shape"></div>
+                            <div class="benefit-number">02</div>
+                            <h3 class="benefit-title">70% Menos Pérdidas Económicas</h3>
+                            <p class="benefit-text">Las empresas que realizan control preventivo de plagas reducen en un 70% las pérdidas por contaminación de productos, daños estructurales y cierre de operaciones.</p>
+                        </div>
+                        <div class="benefit-card">
+                            <div class="benefit-shape"></div>
+                            <div class="benefit-number">03</div>
+                            <h3 class="benefit-title">100% Cumplimiento Normativo</h3>
+                            <p class="benefit-text">Certificación MINSAL y SAG garantiza cumplimiento total de normativas sanitarias, evitando multas de hasta $15 millones y cierres temporales de establecimientos.</p>
+                        </div>
+                        <div class="benefit-card">
+                            <div class="benefit-shape"></div>
+                            <div class="benefit-number">04</div>
+                            <h3 class="benefit-title">85% Mejora en Reputación</h3>
+                            <p class="benefit-text">Espacios libres de plagas aumentan en 85% la confianza de clientes y trabajadores, mejorando valoraciones online y reduciendo quejas sanitarias.</p>
+                        </div>
+                        <div class="benefit-card">
+                            <div class="benefit-shape"></div>
+                            <div class="benefit-number">05</div>
+                            <h3 class="benefit-title">6 Meses de Protección</h3>
+                            <p class="benefit-text">Tratamientos profesionales con productos de baja toxicidad ofrecen protección efectiva durante 6 meses, con garantía de resultados comprobables.</p>
+                        </div>
+                        <div class="benefit-card">
+                            <div class="benefit-shape"></div>
+                            <div class="benefit-number">06</div>
+                            <h3 class="benefit-title">24/7 Respuesta Inmediata</h3>
+                            <p class="benefit-text">Atención de emergencias en menos de 2 horas en Santiago y 24 horas en regiones. Disponibilidad total vía WhatsApp para situaciones críticas.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- CTA Section -->
+                <section class="servicios-cta">
+                    <h2 class="cta-title">¿Necesitas un servicio especializado?</h2>
+                    <p class="cta-text">Nuestro equipo de expertos está listo para evaluar tu situación y ofrecerte la mejor solución. Contáctanos hoy para una cotización gratuita.</p>
+                    <a href="contacto.html" class="btn-cta">Solicitar Cotización</a>
+                </section>
+
+            </main>
+
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuButton = document.getElementById('menu-button');
+            const dropdownMenu = document.getElementById('dropdown-menu');
+            const bpDisplay = document.getElementById('bp-display');
+            const yellowCurtain = document.getElementById('yellow-curtain');
+
+            // Mostrar cortina al cargar y luego ocultarla
+            yellowCurtain.classList.add('show');
+            setTimeout(() => {
+                yellowCurtain.classList.remove('show');
+            }, 600);
+
+            menuButton.addEventListener('click', function(e) {
+                e.stopPropagation();
+                dropdownMenu.classList.toggle('show');
+            });
+
+            document.addEventListener('click', function() {
+                dropdownMenu.classList.remove('show');
+            });
+
+            dropdownMenu.addEventListener('click', function(e) {
+                e.stopPropagation();
+            });
+
+            function showPageWithCurtain(pageUrl) {
+                yellowCurtain.classList.add('show');
+                setTimeout(() => {
+                    window.location.href = pageUrl;
+                }, 600);
+            }
+
+            dropdownMenu.addEventListener('click', function(e) {
+                if (e.target.classList.contains('menu-item')) {
+                    const page = e.target.getAttribute('data-page');
+                    dropdownMenu.classList.remove('show');
+
+                    if (page === 'index') {
+                        showPageWithCurtain('index.html');
+                    } else if (page === 'nosotros') {
+                        showPageWithCurtain('nosotros.html');
+                    } else if (page === 'contacto') {
+                        showPageWithCurtain('contacto.html');
+                    } else if (page === 'sectores') {
+                        showPageWithCurtain('sectores.html');
+                    } else if (page === 'servicios') {
+                        return;
+                    }
+                }
+            });
+
+            function updateBreakpoint() {
+                const width = window.innerWidth;
+                let bp = '';
+
+                if (width <= 320) {
+                    bp = 'iPhone SE: 320px';
+                } else if (width >= 340 && width <= 390) {
+                    bp = 'Mobile Base: 390px';
+                } else if (width >= 391 && width <= 412) {
+                    bp = 'Pixel/Galaxy: 412px';
+                } else if (width >= 416 && width <= 768) {
+                    bp = 'Tablet: 768px';
+                } else if (width >= 769) {
+                    bp = 'Desktop: 1440px';
+                }
+
+                bpDisplay.textContent = `BP: ${bp}`;
+            }
+
+            updateBreakpoint();
+            window.addEventListener('resize', updateBreakpoint);
+        });
+    </script>
+</body>
+</html>

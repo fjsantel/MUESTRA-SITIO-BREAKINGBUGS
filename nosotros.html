@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NOSOTROS - Breaking Bugs Control de Plagas</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Author:wght@400;600&family=Author+Variable:wght@400..700&display=swap" rel="stylesheet">
+    <style>
+        .nosotros-main {
+            display: flex;
+            flex-direction: column;
+            padding-top: calc(16px * var(--scale));
+            height: calc(100% - 48px * var(--scale));
+            overflow-y: auto;
+            padding-bottom: calc(32px * var(--scale));
+        }
+
+        .nosotros-hero {
+            padding: calc(32px * var(--scale)) calc(16px * var(--scale));
+            text-align: center;
+            background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+            margin-bottom: calc(32px * var(--scale));
+        }
+
+        .hero-title {
+            font-family: 'Author', sans-serif;
+            font-size: calc(28px * var(--scale));
+            font-weight: 900;
+            color: var(--color-white);
+            margin-bottom: calc(12px * var(--scale));
+            text-transform: uppercase;
+        }
+
+        .hero-subtitle {
+            font-family: 'Author', sans-serif;
+            font-size: calc(10px * var(--scale));
+            font-weight: 400;
+            color: var(--color-white);
+            line-height: 1.4;
+        }
+
+        .nosotros-content {
+            padding: 0 calc(16px * var(--scale));
+        }
+
+        .section-block {
+            background: var(--color-white);
+            border: calc(1px * var(--scale)) solid var(--color-black);
+            border-radius: calc(8px * var(--scale));
+            padding: calc(20px * var(--scale));
+            margin-bottom: calc(24px * var(--scale));
+        }
+
+        .section-title {
+            font-family: 'Author', sans-serif;
+            font-size: calc(14px * var(--scale));
+            font-weight: 600;
+            color: var(--color-primary);
+            margin-bottom: calc(12px * var(--scale));
+            text-transform: uppercase;
+        }
+
+        .section-text {
+            font-family: 'Author', sans-serif;
+            font-size: calc(9px * var(--scale));
+            font-weight: 400;
+            color: var(--color-black);
+            line-height: 1.6;
+            margin-bottom: calc(10px * var(--scale));
+        }
+
+        .section-text:last-child {
+            margin-bottom: 0;
+        }
+
+        .certificaciones-grid {
+            display: flex;
+            flex-direction: column;
+            gap: calc(12px * var(--scale));
+            margin-top: calc(16px * var(--scale));
+        }
+
+        .cert-item {
+            display: flex;
+            align-items: center;
+            gap: calc(10px * var(--scale));
+            padding: calc(12px * var(--scale));
+            background: var(--color-accent);
+            border-radius: calc(6px * var(--scale));
+        }
+
+        .cert-icon {
+            font-size: calc(24px * var(--scale));
+            flex-shrink: 0;
+        }
+
+        .cert-text {
+            font-family: 'Author', sans-serif;
+            font-size: calc(8px * var(--scale));
+            font-weight: 600;
+            color: var(--color-white);
+            line-height: 1.4;
+        }
+
+        .confianza-bar {
+            background: var(--color-primary);
+            padding: calc(16px * var(--scale));
+            border-radius: calc(8px * var(--scale));
+            margin-bottom: calc(24px * var(--scale));
+            display: flex;
+            flex-direction: column;
+            gap: calc(12px * var(--scale));
+        }
+
+        .confianza-item {
+            display: flex;
+            align-items: center;
+            gap: calc(8px * var(--scale));
+        }
+
+        .confianza-check {
+            color: var(--color-accent);
+            font-weight: 900;
+            font-size: calc(14px * var(--scale));
+        }
+
+        .confianza-text {
+            font-family: 'Author', sans-serif;
+            font-size: calc(8px * var(--scale));
+            font-weight: 600;
+            color: var(--color-white);
+        }
+
+        @media (min-width: 769px) {
+            .hero-title {
+                font-size: calc(48px * var(--scale));
+            }
+
+            .hero-subtitle {
+                font-size: calc(16px * var(--scale));
+                max-width: calc(600px * var(--scale));
+                margin: 0 auto;
+            }
+
+            .nosotros-content {
+                max-width: calc(900px * var(--scale));
+                margin: 0 auto;
+            }
+
+            .section-title {
+                font-size: calc(20px * var(--scale));
+            }
+
+            .section-text {
+                font-size: calc(14px * var(--scale));
+            }
+
+            .cert-text {
+                font-size: calc(14px * var(--scale));
+            }
+
+            .confianza-text {
+                font-size: calc(13px * var(--scale));
+            }
+
+            .certificaciones-grid {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: calc(16px * var(--scale));
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="mobile-frame">
+        <div class="bp-display" id="bp-display">BP: Default</div>
+        <div class="main-container">
+
+            <div class="yellow-curtain" id="yellow-curtain">
+                <div class="curtain-content">
+                    <div class="curtain-text">NOSOTROS</div>
+                </div>
+            </div>
+
+            <header class="header">
+                <div class="header-left">
+                    <div class="branding-text">CONTROL DE PLAGAS</div>
+                </div>
+                <div class="header-center"></div>
+                <div class="header-right" id="menu-button">MENU</div>
+                <div class="dropdown-menu" id="dropdown-menu">
+                    <div class="menu-item" data-page="index">INICIO</div>
+                    <div class="menu-item" data-page="servicios">SERVICIOS</div>
+                    <div class="menu-item" data-page="sectores">SECTORES</div>
+                    <div class="menu-item" data-page="nosotros">NOSOTROS</div>
+                    <div class="menu-item" data-page="contacto">CONTACTO</div>
+                </div>
+            </header>
+
+            <main class="nosotros-main">
+
+                <section class="nosotros-hero">
+                    <h1 class="hero-title">QUIÉNES SOMOS</h1>
+                    <p class="hero-subtitle">Profesionales certificados en control de plagas y sanitización</p>
+                </section>
+
+                <div class="nosotros-content">
+
+                    <div class="confianza-bar">
+                        <div class="confianza-item">
+                            <span class="confianza-check">✓</span>
+                            <span class="confianza-text">Resolución Sanitaria N° 2213518407</span>
+                        </div>
+                        <div class="confianza-item">
+                            <span class="confianza-check">✓</span>
+                            <span class="confianza-text">Credencial SAG</span>
+                        </div>
+                        <div class="confianza-item">
+                            <span class="confianza-check">✓</span>
+                            <span class="confianza-text">Cobertura Nacional</span>
+                        </div>
+                        <div class="confianza-item">
+                            <span class="confianza-check">✓</span>
+                            <span class="confianza-text">Ingeniero Agrónomo Certificado</span>
+                        </div>
+                    </div>
+
+                    <div class="section-block">
+                        <h2 class="section-title">Nuestra Historia</h2>
+                        <p class="section-text">
+                            Breaking Bugs nace después de la pandemia que afectó a Chile y el mundo, con el compromiso de mantener espacios libres de virus, bacterias y plagas.
+                        </p>
+                        <p class="section-text">
+                            Liderados por una mujer emprendedora y gestionados técnicamente por un Ingeniero Agrónomo certificado, ofrecemos soluciones profesionales y actualizadas para el control integrado de plagas urbanas y rurales.
+                        </p>
+                    </div>
+
+                    <div class="section-block">
+                        <h2 class="section-title">Misión</h2>
+                        <p class="section-text">
+                            Ofrecer el mejor servicio de control de plagas y saneamiento, centrados en la correcta ejecución y servicio post-venta.
+                        </p>
+                    </div>
+
+                    <div class="section-block">
+                        <h2 class="section-title">Visión</h2>
+                        <p class="section-text">
+                            Ser empresa líder en soluciones amigables con el medio ambiente y de baja toxicidad para el ser humano.
+                        </p>
+                    </div>
+
+                    <div class="section-block">
+                        <h2 class="section-title">Nuestras Certificaciones</h2>
+                        <div class="certificaciones-grid">
+                            <div class="cert-item">
+                                <div class="cert-icon">✅</div>
+                                <div class="cert-text">Resolución Sanitaria Minsal N° 2213518407</div>
+                            </div>
+                            <div class="cert-item">
+                                <div class="cert-icon">✅</div>
+                                <div class="cert-text">Credencial SAG (Servicio Agrícola Ganadero)</div>
+                            </div>
+                            <div class="cert-item">
+                                <div class="cert-icon">✅</div>
+                                <div class="cert-text">Ingeniero Agrónomo Responsable Técnico</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="section-block">
+                        <h2 class="section-title">Por Qué Elegirnos</h2>
+
+                        <h3 class="section-title" style="font-size: calc(11px * var(--scale)); margin-top: calc(12px * var(--scale));">Capacitación Continua</h3>
+                        <p class="section-text">
+                            Personal en constante actualización con las últimas técnicas y productos del mercado.
+                        </p>
+
+                        <h3 class="section-title" style="font-size: calc(11px * var(--scale)); margin-top: calc(12px * var(--scale));">Productos de Baja Toxicidad</h3>
+                        <p class="section-text">
+                            Priorizamos la salud humana y el medio ambiente.
+                        </p>
+
+                        <h3 class="section-title" style="font-size: calc(11px * var(--scale)); margin-top: calc(12px * var(--scale));">Cobertura Nacional</h3>
+                        <p class="section-text">
+                            Servicios en todo el territorio de Chile.
+                        </p>
+
+                        <h3 class="section-title" style="font-size: calc(11px * var(--scale)); margin-top: calc(12px * var(--scale));">Equipo Certificado</h3>
+                        <p class="section-text">
+                            Liderados por Ingeniero Agrónomo con experiencia profesional.
+                        </p>
+
+                        <h3 class="section-title" style="font-size: calc(11px * var(--scale)); margin-top: calc(12px * var(--scale));">Servicio Post-Venta</h3>
+                        <p class="section-text">
+                            Seguimiento y garantía de resultados.
+                        </p>
+                    </div>
+
+                    <div class="section-block">
+                        <h2 class="section-title">Información Legal</h2>
+                        <p class="section-text">
+                            <strong>COPLASAN LIMITADA</strong><br>
+                            RUT: 77.584.666-6<br>
+                            Resolución Sanitaria N° 2213518407
+                        </p>
+                        <p class="section-text">
+                            <strong>Representante Legal:</strong> Isidora Valenzuela Rojas<br>
+                            <strong>Representante Técnico:</strong> Francisco Infante Fernández, Ingeniero Agrónomo
+                        </p>
+                    </div>
+
+                </div>
+
+            </main>
+
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuButton = document.getElementById('menu-button');
+            const dropdownMenu = document.getElementById('dropdown-menu');
+            const bpDisplay = document.getElementById('bp-display');
+            const yellowCurtain = document.getElementById('yellow-curtain');
+
+            yellowCurtain.classList.add('show');
+            setTimeout(() => {
+                yellowCurtain.classList.remove('show');
+            }, 600);
+
+            menuButton.addEventListener('click', function(e) {
+                e.stopPropagation();
+                dropdownMenu.classList.toggle('show');
+            });
+
+            document.addEventListener('click', function() {
+                dropdownMenu.classList.remove('show');
+            });
+
+            dropdownMenu.addEventListener('click', function(e) {
+                e.stopPropagation();
+            });
+
+            function showPageWithCurtain(pageUrl) {
+                yellowCurtain.classList.add('show');
+                setTimeout(() => {
+                    window.location.href = pageUrl;
+                }, 600);
+            }
+
+            dropdownMenu.addEventListener('click', function(e) {
+                if (e.target.classList.contains('menu-item')) {
+                    const page = e.target.getAttribute('data-page');
+                    dropdownMenu.classList.remove('show');
+
+                    if (page === 'index') {
+                        showPageWithCurtain('index.html');
+                    } else if (page === 'servicios') {
+                        showPageWithCurtain('servicios.html');
+                    } else if (page === 'sectores') {
+                        showPageWithCurtain('sectores.html');
+                    } else if (page === 'contacto') {
+                        showPageWithCurtain('contacto.html');
+                    } else if (page === 'nosotros') {
+                        return;
+                    }
+                }
+            });
+
+            function updateBreakpoint() {
+                const width = window.innerWidth;
+                let bp = '';
+
+                if (width <= 320) {
+                    bp = 'iPhone SE: 320px';
+                } else if (width >= 340 && width <= 390) {
+                    bp = 'Mobile Base: 390px';
+                } else if (width >= 391 && width <= 412) {
+                    bp = 'Pixel/Galaxy: 412px';
+                } else if (width >= 416 && width <= 768) {
+                    bp = 'Tablet: 768px';
+                } else if (width >= 769) {
+                    bp = 'Desktop: 1440px';
+                }
+
+                bpDisplay.textContent = `BP: ${bp}`;
+            }
+
+            updateBreakpoint();
+            window.addEventListener('resize', updateBreakpoint);
+        });
+    </script>
+</body>
+</html>

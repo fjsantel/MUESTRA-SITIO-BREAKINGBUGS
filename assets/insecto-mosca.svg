@@ -1,0 +1,27 @@
+<svg width="160" height="160" viewBox="0 0 160 160" xmlns="http://www.w3.org/2000/svg">
+  <!-- Cabeza grande -->
+  <circle cx="80" cy="55" r="20" fill="#2d2d2d"/>
+
+  <!-- Ojos compuestos -->
+  <circle cx="70" cy="50" r="8" fill="#1a1a1a"/>
+  <circle cx="90" cy="50" r="8" fill="#1a1a1a"/>
+
+  <!-- Tórax -->
+  <ellipse cx="80" cy="85" rx="18" ry="25" fill="#2d2d2d"/>
+
+  <!-- Abdomen -->
+  <ellipse cx="80" cy="110" rx="15" ry="20" fill="#2d2d2d"/>
+
+  <!-- Alas (característica prominente) -->
+  <ellipse cx="65" cy="80" rx="25" ry="12" fill="none" stroke="#2d2d2d" stroke-width="3" opacity="0.7" transform="rotate(-25 65 80)"/>
+  <ellipse cx="95" cy="80" rx="25" ry="12" fill="none" stroke="#2d2d2d" stroke-width="3" opacity="0.7" transform="rotate(25 95 80)"/>
+
+  <!-- Detalle de alas -->
+  <path d="M 50 75 Q 60 80, 70 82" stroke="#2d2d2d" stroke-width="2" fill="none"/>
+  <path d="M 110 75 Q 100 80, 90 82" stroke="#2d2d2d" stroke-width="2" fill="none"/>
+
+  <!-- Patas -->
+  <line x1="70" y1="95" x2="55" y2="110" stroke="#2d2d2d" stroke-width="3" stroke-linecap="round"/>
+  <line x1="80" y1="98" x2="75" y2="120" stroke="#2d2d2d" stroke-width="3" stroke-linecap="round"/>
+  <line x1="90" y1="95" x2="105" y2="110" stroke="#2d2d2d" stroke-width="3" stroke-linecap="round"/>
+</svg>

@@ -1,0 +1,25 @@
+<svg width="160" height="160" viewBox="0 0 160 160" xmlns="http://www.w3.org/2000/svg">
+  <!-- Cuerpo de la barata -->
+  <ellipse cx="80" cy="80" rx="30" ry="50" fill="#2d2d2d"/>
+
+  <!-- Segmentos del cuerpo -->
+  <ellipse cx="80" cy="65" rx="28" ry="15" fill="#1a1a1a"/>
+  <ellipse cx="80" cy="80" rx="30" ry="15" fill="#1a1a1a"/>
+  <ellipse cx="80" cy="95" rx="28" ry="15" fill="#1a1a1a"/>
+
+  <!-- Cabeza -->
+  <ellipse cx="80" cy="40" rx="18" ry="15" fill="#2d2d2d"/>
+
+  <!-- Antenas largas -->
+  <path d="M 70 35 Q 55 20, 45 10" stroke="#2d2d2d" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <path d="M 90 35 Q 105 20, 115 10" stroke="#2d2d2d" stroke-width="3" fill="none" stroke-linecap="round"/>
+
+  <!-- Patas (6 patas) -->
+  <line x1="60" y1="70" x2="40" y2="80" stroke="#2d2d2d" stroke-width="3" stroke-linecap="round"/>
+  <line x1="55" y1="80" x2="35" y2="85" stroke="#2d2d2d" stroke-width="3" stroke-linecap="round"/>
+  <line x1="60" y1="90" x2="40" y2="100" stroke="#2d2d2d" stroke-width="3" stroke-linecap="round"/>
+
+  <line x1="100" y1="70" x2="120" y2="80" stroke="#2d2d2d" stroke-width="3" stroke-linecap="round"/>
+  <line x1="105" y1="80" x2="125" y2="85" stroke="#2d2d2d" stroke-width="3" stroke-linecap="round"/>
+  <line x1="100" y1="90" x2="120" y2="100" stroke="#2d2d2d" stroke-width="3" stroke-linecap="round"/>
+</svg>

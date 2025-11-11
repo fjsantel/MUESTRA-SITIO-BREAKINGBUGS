@@ -1,0 +1,906 @@
+/* ========================================
+   CARRUSEL DE INSECTOS - SECCIÓN 1
+   ======================================== */
+
+.main-content-new {
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    background: #ffffff;
+    padding: 0;
+}
+
+/* Sección del carrusel */
+.carousel-section {
+    width: 100%;
+    padding: calc(40px * var(--scale)) calc(16px * var(--scale));
+    background: #DAD7CD;
+    min-height: calc(500px * var(--scale));
+    display: grid;
+    grid-template-rows: calc(320px * var(--scale)) auto;
+    gap: calc(40px * var(--scale));
+    align-items: start;
+    justify-items: center;
+}
+
+/* Contenedor del carrusel */
+.carousel-container {
+    width: 100%;
+    max-width: calc(1200px * var(--scale));
+    height: calc(320px * var(--scale));
+    overflow: visible;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Track del carrusel */
+.carousel-track {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: calc(20px * var(--scale));
+    transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    height: 100%;
+    position: relative;
+}
+
+/* Item individual del carrusel */
+.carousel-item {
+    flex-shrink: 0;
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    opacity: 0.7;
+    transform: scale(1);
+    position: relative;
+}
+
+/* Item del centro (grande y destacado) */
+.carousel-item-center {
+    opacity: 1;
+    transform: scale(1);
+    z-index: 10;
+}
+
+/* Icono del insecto (SVG) */
+.insect-icon {
+    width: calc(120px * var(--scale));
+    height: calc(120px * var(--scale));
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    object-fit: contain;
+    display: block;
+    border-radius: calc(8px * var(--scale));
+    box-shadow: 0 calc(4px * var(--scale)) calc(12px * var(--scale)) rgba(0, 0, 0, 0.1);
+}
+
+.carousel-item-center .insect-icon {
+    width: calc(280px * var(--scale));
+    height: calc(280px * var(--scale));
+    box-shadow: 0 calc(8px * var(--scale)) calc(24px * var(--scale)) rgba(0, 0, 0, 0.2);
+}
+
+/* Contenedor del nombre */
+.insect-name-container {
+    width: 100%;
+    max-width: calc(400px * var(--scale));
+    padding: calc(20px * var(--scale)) calc(32px * var(--scale));
+    background: #344E41;
+    border-radius: calc(50px * var(--scale));
+    text-align: center;
+    margin: 0 auto;
+    position: relative;
+    height: calc(64px * var(--scale));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Nombre del insecto */
+.insect-name {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: calc(20px * var(--scale));
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: calc(2px * var(--scale));
+    transition: opacity 0.3s ease;
+}
+
+/* ========================================
+   SECCIÓN EDITORIAL - SECCIÓN 2
+   ======================================== */
+
+.editorial-section {
+    width: 100%;
+    padding: calc(80px * var(--scale)) calc(16px * var(--scale));
+    background: #ffffff;
+    border-top: calc(1px * var(--scale)) solid #e0e0e0;
+}
+
+.editorial-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: calc(40px * var(--scale));
+    max-width: calc(1200px * var(--scale));
+    margin: 0 auto;
+}
+
+/* Columna izquierda */
+.editorial-left {
+    display: flex;
+    flex-direction: column;
+    gap: calc(16px * var(--scale));
+}
+
+.editorial-title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    font-size: calc(40px * var(--scale));
+    line-height: 1;
+    color: #2C2D31;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: calc(-1px * var(--scale));
+}
+
+.editorial-subtitle {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    font-size: calc(14px * var(--scale));
+    line-height: 1.4;
+    color: #666666;
+    margin: 0;
+}
+
+/* Columna derecha */
+.editorial-right {
+    display: flex;
+    flex-direction: column;
+    gap: calc(20px * var(--scale));
+}
+
+.editorial-text {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: calc(13px * var(--scale));
+    line-height: 1.7;
+    color: #333333;
+    margin: 0;
+    text-align: justify;
+}
+
+/* Espaciador */
+.spacer {
+    width: 100%;
+    height: calc(60px * var(--scale));
+}
+
+/* ========================================
+   RESPONSIVE - MOBILE
+   ======================================== */
+
+/* iPhone SE y pantallas pequeñas */
+@media (max-width: 320px) {
+    .main-content-new {
+        margin-top: calc(60px * var(--scale));
+    }
+
+    .carousel-section {
+        min-height: calc(280px * var(--scale));
+        padding: calc(194px * var(--scale)) calc(8px * var(--scale)) calc(20px * var(--scale));
+        gap: calc(24px * var(--scale));
+    }
+
+    .carousel-container {
+        height: calc(150px * var(--scale));
+    }
+
+    .carousel-track {
+        gap: calc(8px * var(--scale));
+    }
+
+    .insect-icon {
+        width: calc(35px * var(--scale));
+        height: calc(35px * var(--scale));
+    }
+
+    .carousel-item-center .insect-icon {
+        width: calc(100px * var(--scale));
+        height: calc(100px * var(--scale));
+    }
+
+    .insect-name {
+        font-size: calc(12px * var(--scale));
+    }
+
+    .insect-name-container {
+        padding: calc(12px * var(--scale)) calc(18px * var(--scale));
+        height: calc(45px * var(--scale));
+    }
+}
+
+/* Mobile Base: 340-415px */
+@media (min-width: 321px) and (max-width: 415px) {
+    .main-content-new {
+        margin-top: calc(60px * var(--scale));
+    }
+
+    .carousel-section {
+        min-height: calc(320px * var(--scale));
+        padding: calc(194px * var(--scale)) calc(10px * var(--scale)) calc(24px * var(--scale));
+        gap: calc(26px * var(--scale));
+    }
+
+    .carousel-container {
+        height: calc(180px * var(--scale));
+    }
+
+    .carousel-track {
+        gap: calc(10px * var(--scale));
+    }
+
+    .insect-icon {
+        width: calc(45px * var(--scale));
+        height: calc(45px * var(--scale));
+    }
+
+    .carousel-item-center .insect-icon {
+        width: calc(130px * var(--scale));
+        height: calc(130px * var(--scale));
+    }
+
+    .insect-name {
+        font-size: calc(14px * var(--scale));
+    }
+
+    .insect-name-container {
+        padding: calc(14px * var(--scale)) calc(22px * var(--scale));
+        height: calc(50px * var(--scale));
+    }
+}
+
+/* ========================================
+   RESPONSIVE - TABLET
+   ======================================== */
+
+@media (min-width: 416px) and (max-width: 768px) {
+    .carousel-section {
+        min-height: calc(450px * var(--scale));
+    }
+
+    .insect-box {
+        width: calc(140px * var(--scale));
+        height: calc(140px * var(--scale));
+    }
+
+    .carousel-item-center .insect-box {
+        width: calc(320px * var(--scale));
+        height: calc(320px * var(--scale));
+    }
+
+    .insect-icon {
+        width: calc(80px * var(--scale));
+        height: calc(80px * var(--scale));
+    }
+
+    .carousel-item-center .insect-icon {
+        width: calc(200px * var(--scale));
+        height: calc(200px * var(--scale));
+    }
+
+    .insect-name {
+        font-size: calc(24px * var(--scale));
+    }
+
+    .editorial-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: calc(60px * var(--scale));
+    }
+
+    .editorial-title {
+        font-size: calc(56px * var(--scale));
+    }
+
+    .editorial-subtitle {
+        font-size: calc(16px * var(--scale));
+    }
+
+    .editorial-text {
+        font-size: calc(14px * var(--scale));
+    }
+}
+
+/* ========================================
+   RESPONSIVE - DESKTOP
+   ======================================== */
+
+@media (min-width: 769px) {
+    .carousel-section {
+        padding: calc(80px * var(--scale)) calc(40px * var(--scale));
+        min-height: calc(500px * var(--scale));
+    }
+
+    .carousel-track {
+        gap: calc(40px * var(--scale));
+    }
+
+    .insect-box {
+        width: calc(160px * var(--scale));
+        height: calc(160px * var(--scale));
+    }
+
+    .carousel-item-center .insect-box {
+        width: calc(380px * var(--scale));
+        height: calc(380px * var(--scale));
+    }
+
+    .insect-icon {
+        width: calc(100px * var(--scale));
+        height: calc(100px * var(--scale));
+    }
+
+    .carousel-item-center .insect-icon {
+        width: calc(240px * var(--scale));
+        height: calc(240px * var(--scale));
+    }
+
+    .insect-name-container {
+        max-width: calc(500px * var(--scale));
+        padding: calc(24px * var(--scale)) calc(48px * var(--scale));
+    }
+
+    .insect-name {
+        font-size: calc(28px * var(--scale));
+        letter-spacing: calc(3px * var(--scale));
+    }
+
+    .editorial-section {
+        padding: calc(120px * var(--scale)) calc(80px * var(--scale));
+    }
+
+    .editorial-grid {
+        grid-template-columns: 1fr 1.5fr;
+        gap: calc(80px * var(--scale));
+    }
+
+    .editorial-title {
+        font-size: calc(72px * var(--scale));
+        letter-spacing: calc(-2px * var(--scale));
+    }
+
+    .editorial-subtitle {
+        font-size: calc(18px * var(--scale));
+        max-width: calc(400px * var(--scale));
+    }
+
+    .editorial-text {
+        font-size: calc(16px * var(--scale));
+        line-height: 1.8;
+    }
+
+    .spacer {
+        height: calc(100px * var(--scale));
+    }
+}
+
+/* ========================================
+   ANIMACIONES SUAVES
+   ======================================== */
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(calc(20px * var(--scale)));
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.editorial-section {
+    animation: slideIn 0.8s ease-out;
+}
+
+/* Transición suave del nombre */
+.insect-name {
+    animation: fadeInText 0.5s ease;
+}
+
+@keyframes fadeInText {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* ========================================
+   SECCIÓN 3: CERTIFICACIONES
+   ======================================== */
+
+.certifications-section {
+    width: 100%;
+    padding: calc(48px * var(--scale)) calc(16px * var(--scale));
+    background: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cert-container {
+    display: flex;
+    flex-direction: column;
+    gap: calc(16px * var(--scale));
+    width: 100%;
+    max-width: calc(600px * var(--scale));
+}
+
+.cert-badge {
+    display: flex;
+    align-items: center;
+    gap: calc(16px * var(--scale));
+    padding: calc(20px * var(--scale));
+    background: linear-gradient(135deg, #588157, #3a5a40);
+    border-radius: calc(12px * var(--scale));
+    box-shadow: 0 calc(4px * var(--scale)) calc(12px * var(--scale)) rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.cert-badge:hover {
+    transform: translateY(calc(-4px * var(--scale)));
+}
+
+.cert-icon {
+    width: calc(48px * var(--scale));
+    height: calc(48px * var(--scale));
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(24px * var(--scale));
+    color: #ffffff;
+    font-weight: 900;
+    flex-shrink: 0;
+}
+
+.cert-info {
+    flex: 1;
+}
+
+.cert-label {
+    font-family: 'Montserrat', sans-serif;
+    font-size: calc(10px * var(--scale));
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.9);
+    text-transform: uppercase;
+    letter-spacing: calc(0.5px * var(--scale));
+    margin-bottom: calc(4px * var(--scale));
+}
+
+.cert-number {
+    font-family: 'Montserrat', sans-serif;
+    font-size: calc(14px * var(--scale));
+    font-weight: 700;
+    color: #ffffff;
+}
+
+/* ========================================
+   SECCIÓN 4: SLIDER DE FOTOS
+   ======================================== */
+
+.photo-slider-section {
+    width: 100%;
+    padding: calc(32px * var(--scale)) 0;
+    background: #f8f9fa;
+    overflow: hidden;
+}
+
+.photo-slider-container {
+    width: 100%;
+    overflow: hidden;
+}
+
+.photo-slider-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: 100%;
+}
+
+.photo-slide {
+    min-width: 100%;
+    height: calc(300px * var(--scale));
+    position: relative;
+}
+
+.photo-placeholder {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #DAD7CD, #A3B18A);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: calc(8px * var(--scale));
+}
+
+.photo-placeholder span {
+    font-family: 'Montserrat', sans-serif;
+    font-size: calc(24px * var(--scale));
+    font-weight: 700;
+    color: #344E41;
+}
+
+.photo-placeholder small {
+    font-family: 'Montserrat', sans-serif;
+    font-size: calc(12px * var(--scale));
+    font-weight: 400;
+    color: #588157;
+}
+
+.photo-slider-dots {
+    display: flex;
+    justify-content: center;
+    gap: calc(8px * var(--scale));
+    margin-top: calc(16px * var(--scale));
+}
+
+.slider-dot {
+    width: calc(8px * var(--scale));
+    height: calc(8px * var(--scale));
+    border-radius: 50%;
+    background: #A3B18A;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.slider-dot.active {
+    background: #344E41;
+    width: calc(24px * var(--scale));
+    border-radius: calc(4px * var(--scale));
+}
+
+/* ========================================
+   SECCIÓN 5: TU TRANQUILIDAD
+   ======================================== */
+
+.tranquilidad-section {
+    width: 100%;
+    padding: calc(64px * var(--scale)) calc(24px * var(--scale));
+    background: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tranquilidad-content {
+    max-width: calc(700px * var(--scale));
+    text-align: center;
+}
+
+.tranquilidad-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: calc(32px * var(--scale));
+    font-weight: 900;
+    color: #344E41;
+    line-height: 1.2;
+    margin-bottom: calc(24px * var(--scale));
+    text-transform: uppercase;
+}
+
+.tranquilidad-text {
+    font-family: 'Montserrat', sans-serif;
+    font-size: calc(14px * var(--scale));
+    font-weight: 400;
+    color: #3a5a40;
+    line-height: 1.7;
+    margin-bottom: calc(32px * var(--scale));
+}
+
+.btn-cotizacion {
+    display: inline-block;
+    font-family: 'Montserrat', sans-serif;
+    font-size: calc(14px * var(--scale));
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: calc(16px * var(--scale)) calc(32px * var(--scale));
+    background: linear-gradient(135deg, #588157, #3a5a40);
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: calc(8px * var(--scale));
+    box-shadow: 0 calc(4px * var(--scale)) calc(12px * var(--scale)) rgba(52, 78, 65, 0.3);
+    transition: all 0.3s ease;
+}
+
+.btn-cotizacion:hover {
+    transform: translateY(calc(-2px * var(--scale)));
+    box-shadow: 0 calc(6px * var(--scale)) calc(16px * var(--scale)) rgba(52, 78, 65, 0.4);
+}
+
+/* ========================================
+   SECCIÓN 6: COMPROMISO
+   ======================================== */
+
+.compromiso-section {
+    width: 100%;
+    padding: calc(80px * var(--scale)) calc(24px * var(--scale));
+    background: linear-gradient(135deg, #588157, #3a5a40);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.compromiso-content {
+    max-width: calc(800px * var(--scale));
+    text-align: center;
+}
+
+.compromiso-text {
+    font-family: 'Montserrat', sans-serif;
+    font-size: calc(24px * var(--scale));
+    font-weight: 600;
+    color: #ffffff;
+    line-height: 1.5;
+    font-style: italic;
+    margin: 0;
+}
+
+/* ========================================
+   SECCIÓN 7: CTA FINAL
+   ======================================== */
+
+.cta-final-section {
+    width: 100%;
+    padding: calc(64px * var(--scale)) calc(24px * var(--scale));
+    background: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cta-final-content {
+    max-width: calc(700px * var(--scale));
+    text-align: center;
+}
+
+.cta-final-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: calc(28px * var(--scale));
+    font-weight: 900;
+    color: #344E41;
+    line-height: 1.3;
+    margin-bottom: calc(16px * var(--scale));
+}
+
+.cta-final-subtitle {
+    font-family: 'Montserrat', sans-serif;
+    font-size: calc(14px * var(--scale));
+    font-weight: 400;
+    color: #588157;
+    line-height: 1.5;
+    margin-bottom: calc(32px * var(--scale));
+}
+
+.cta-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: calc(12px * var(--scale));
+    align-items: center;
+}
+
+.btn-cta-primary,
+.btn-cta-secondary {
+    display: inline-block;
+    font-family: 'Montserrat', sans-serif;
+    font-size: calc(14px * var(--scale));
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: calc(16px * var(--scale)) calc(40px * var(--scale));
+    text-decoration: none;
+    border-radius: calc(8px * var(--scale));
+    transition: all 0.3s ease;
+    width: 100%;
+    max-width: calc(300px * var(--scale));
+}
+
+.btn-cta-primary {
+    background: linear-gradient(135deg, #588157, #3a5a40);
+    color: #ffffff;
+    box-shadow: 0 calc(4px * var(--scale)) calc(12px * var(--scale)) rgba(52, 78, 65, 0.3);
+}
+
+.btn-cta-primary:hover {
+    transform: translateY(calc(-2px * var(--scale)));
+    box-shadow: 0 calc(6px * var(--scale)) calc(16px * var(--scale)) rgba(52, 78, 65, 0.4);
+}
+
+.btn-cta-secondary {
+    background: transparent;
+    color: #344E41;
+    border: calc(2px * var(--scale)) solid #344E41;
+}
+
+.btn-cta-secondary:hover {
+    background: #344E41;
+    color: #ffffff;
+}
+
+/* ========================================
+   FOOTER
+   ======================================== */
+
+.footer-home {
+    width: 100%;
+    padding: calc(40px * var(--scale)) calc(24px * var(--scale));
+    background: #344E41;
+    text-align: center;
+}
+
+.footer-contact {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: calc(12px * var(--scale));
+    margin-bottom: calc(24px * var(--scale));
+}
+
+.footer-link {
+    font-family: 'Montserrat', sans-serif;
+    font-size: calc(12px * var(--scale));
+    font-weight: 600;
+    color: #A3B18A;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-link:hover {
+    color: #DAD7CD;
+}
+
+.footer-separator {
+    color: #588157;
+    font-weight: 300;
+}
+
+.footer-legal {
+    font-family: 'Montserrat', sans-serif;
+    font-size: calc(10px * var(--scale));
+    font-weight: 400;
+    color: #A3B18A;
+    line-height: 1.6;
+}
+
+.footer-legal p {
+    margin: calc(4px * var(--scale)) 0;
+}
+
+.footer-rut {
+    font-size: calc(9px * var(--scale));
+    opacity: 0.8;
+}
+
+/* ========================================
+   RESPONSIVE - CERTIFICACIONES
+   ======================================== */
+
+@media (min-width: 416px) and (max-width: 768px) {
+    .cert-container {
+        flex-direction: row;
+        max-width: 100%;
+    }
+
+    .cert-badge {
+        flex: 1;
+    }
+
+    .tranquilidad-title {
+        font-size: calc(36px * var(--scale));
+    }
+
+    .compromiso-text {
+        font-size: calc(28px * var(--scale));
+    }
+
+    .cta-buttons {
+        flex-direction: row;
+        justify-content: center;
+    }
+}
+
+@media (min-width: 769px) {
+    .certifications-section {
+        padding: calc(64px * var(--scale)) calc(32px * var(--scale));
+    }
+
+    .cert-container {
+        flex-direction: row;
+        max-width: calc(900px * var(--scale));
+    }
+
+    .cert-badge {
+        flex: 1;
+        padding: calc(32px * var(--scale));
+    }
+
+    .cert-icon {
+        width: calc(64px * var(--scale));
+        height: calc(64px * var(--scale));
+        font-size: calc(32px * var(--scale));
+    }
+
+    .cert-label {
+        font-size: calc(12px * var(--scale));
+    }
+
+    .cert-number {
+        font-size: calc(18px * var(--scale));
+    }
+
+    .photo-slide {
+        height: calc(500px * var(--scale));
+    }
+
+    .tranquilidad-section {
+        padding: calc(96px * var(--scale)) calc(32px * var(--scale));
+    }
+
+    .tranquilidad-title {
+        font-size: calc(48px * var(--scale));
+    }
+
+    .tranquilidad-text {
+        font-size: calc(16px * var(--scale));
+    }
+
+    .btn-cotizacion {
+        font-size: calc(16px * var(--scale));
+        padding: calc(20px * var(--scale)) calc(48px * var(--scale));
+    }
+
+    .compromiso-section {
+        padding: calc(120px * var(--scale)) calc(32px * var(--scale));
+    }
+
+    .compromiso-text {
+        font-size: calc(32px * var(--scale));
+    }
+
+    .cta-final-section {
+        padding: calc(96px * var(--scale)) calc(32px * var(--scale));
+    }
+
+    .cta-final-title {
+        font-size: calc(42px * var(--scale));
+    }
+
+    .cta-final-subtitle {
+        font-size: calc(18px * var(--scale));
+    }
+
+    .cta-buttons {
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .btn-cta-primary,
+    .btn-cta-secondary {
+        font-size: calc(16px * var(--scale));
+        padding: calc(20px * var(--scale)) calc(48px * var(--scale));
+    }
+
+    .footer-home {
+        padding: calc(48px * var(--scale)) calc(32px * var(--scale));
+    }
+
+    .footer-link {
+        font-size: calc(14px * var(--scale));
+    }
+
+    .footer-legal {
+        font-size: calc(12px * var(--scale));
+    }
+}
