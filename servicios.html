@@ -331,6 +331,12 @@
             background: linear-gradient(135deg, #3a5a40, #588157);
         }
 
+        /* Espaciador entre sections */
+        .section-spacer {
+            height: calc(80px * var(--scale));
+            background: transparent;
+        }
+
         /* CTA Section */
         .servicios-cta {
             margin-top: 0;
@@ -383,6 +389,10 @@
 
         /* Responsive Tablet */
         @media (min-width: 416px) and (max-width: 768px) {
+            .section-spacer {
+                height: calc(100px * var(--scale));
+            }
+
             .servicios-grid {
                 display: grid;
                 grid-template-columns: 1fr 1fr;
@@ -412,6 +422,10 @@
 
         /* Responsive Desktop */
         @media (min-width: 769px) {
+            .section-spacer {
+                height: calc(120px * var(--scale));
+            }
+
             .servicios-hero {
                 padding: calc(80px * var(--scale)) calc(32px * var(--scale));
             }
@@ -715,6 +729,9 @@
                         </div>
                     </div>
                 </section>
+
+                <!-- Espaciador -->
+                <div class="section-spacer"></div>
 
                 <!-- CTA Section -->
                 <section class="servicios-cta">
