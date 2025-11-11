@@ -4,7 +4,18 @@
 	 viewBox="0 0 318.5 297.6" style="enable-background:new 0 0 318.5 297.6;" xml:space="preserve">
 <defs>
     <style type="text/css">
-        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600&display=swap');
+        @font-face {
+            font-family: 'Montserrat';
+            font-weight: 300;
+            font-style: normal;
+            src: url('fonts/Montserrat-Light.ttf') format('truetype');
+        }
+        @font-face {
+            font-family: 'Montserrat';
+            font-weight: 600;
+            font-style: normal;
+            src: url('fonts/Montserrat-SemiBold.ttf') format('truetype');
+        }
     </style>
 </defs>
 <style type="text/css">
