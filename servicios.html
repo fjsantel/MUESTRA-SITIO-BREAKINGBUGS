@@ -96,12 +96,14 @@
             display: flex;
             gap: calc(20px * var(--scale));
             padding: 0 calc(24px * var(--scale)) calc(24px * var(--scale)) calc(24px * var(--scale));
-            min-width: min-content;
+            width: max-content;
         }
 
         .benefit-card {
             position: relative;
-            min-width: calc(280px * var(--scale));
+            min-width: calc(300px * var(--scale));
+            max-width: calc(300px * var(--scale));
+            flex-shrink: 0;
             padding: calc(56px * var(--scale)) calc(24px * var(--scale)) calc(32px * var(--scale)) calc(24px * var(--scale));
             background: #ffffff;
             border-radius: calc(16px * var(--scale));
@@ -458,6 +460,7 @@
                 flex-wrap: wrap;
                 padding: 0 calc(32px * var(--scale)) calc(32px * var(--scale)) calc(32px * var(--scale));
                 max-width: calc(1200px * var(--scale));
+                width: auto;
                 margin: 0 auto;
             }
 
