@@ -3,233 +3,360 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Breaking Bugs - Control de Plagas Certificado Santiago | Desratización, Desinsectación</title>
-    <meta name="description" content="Control de plagas profesional certificado en Santiago. Desratización, desinsectación, desinfección y sanitización con Resolución Sanitaria MINSAL. Cobertura nacional. Cotización gratis.">
-    <meta name="keywords" content="control de plagas Santiago, desratización, desinsectación, fumigación, sanitización, desinfección, control plagas certificado, Breaking Bugs">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="index-carousel.css">
+    <title>Bienvenido a Breaking Bugs - Control de Plagas Profesional</title>
+    <meta name="description" content="Breaking Bugs - Tu aliado en control de plagas certificado. Ingresa para conocer nuestros servicios profesionales de desratización, desinsectación y más.">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    <!-- SEO Schema Markup -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "LocalBusiness",
-      "name": "Breaking Bugs - Control de Plagas",
-      "image": "logo superior derecho.svg",
-      "description": "Empresa de control de plagas certificada con Resolución Sanitaria MINSAL y Credencial SAG. Servicios profesionales de desratización, desinsectación, desinfección y sanitización.",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Nido de Águilas 14170",
-        "addressLocality": "Lo Barnechea",
-        "addressRegion": "Región Metropolitana",
-        "addressCountry": "CL"
-      },
-      "telephone": "+56978630975",
-      "email": "bugsbreaking@gmail.com",
-      "openingHours": "Mo-Fr 08:00-18:00, Sa 09:00-14:00",
-      "priceRange": "$$",
-      "areaServed": "Chile"
-    }
-    </script>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: #ffffff;
+            min-height: 100vh;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        .welcome-container {
+            max-width: 1200px;
+            width: 100%;
+            padding: 80px 60px;
+            background: transparent;
+            text-align: center;
+            animation: fadeIn 0.8s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .logo-container {
+            margin-bottom: 60px;
+        }
+
+        .logo-welcome {
+            max-width: 280px;
+            height: auto;
+            margin-bottom: 40px;
+            filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.15));
+        }
+
+        .brand-title {
+            font-size: clamp(48px, 6vw, 72px);
+            font-weight: 900;
+            color: #344E41;
+            text-transform: uppercase;
+            letter-spacing: -2px;
+            margin-bottom: 16px;
+            line-height: 1;
+        }
+
+        .brand-subtitle {
+            font-size: clamp(18px, 2vw, 24px);
+            font-weight: 300;
+            color: #588157;
+            text-transform: uppercase;
+            letter-spacing: 8px;
+            margin-bottom: 60px;
+        }
+
+        .brand-message {
+            font-size: clamp(16px, 1.8vw, 20px);
+            font-weight: 300;
+            color: #344E41;
+            line-height: 1.8;
+            margin-bottom: 80px;
+            padding: 0;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .services-summary {
+            background: transparent;
+            padding: 0;
+            margin-bottom: 70px;
+        }
+
+        .services-title {
+            font-size: clamp(14px, 1.5vw, 16px);
+            font-weight: 600;
+            color: #588157;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            margin-bottom: 30px;
+        }
+
+        .services-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            justify-content: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .service-tag {
+            background: transparent;
+            color: #344E41;
+            font-size: clamp(13px, 1.4vw, 15px);
+            font-weight: 500;
+            padding: 12px 28px;
+            border-radius: 30px;
+            border: 1px solid #A3B18A;
+            transition: all 0.3s ease;
+            letter-spacing: 1px;
+        }
+
+        .service-tag:hover {
+            background: #588157;
+            color: #ffffff;
+            border-color: #588157;
+            transform: translateY(-2px);
+        }
+
+        .buttons-container {
+            display: flex;
+            flex-direction: row;
+            gap: 20px;
+            margin-bottom: 80px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            font-family: 'Montserrat', sans-serif;
+            font-size: clamp(14px, 1.5vw, 16px);
+            font-weight: 600;
+            text-transform: uppercase;
+            text-decoration: none;
+            padding: 20px 50px;
+            border-radius: 50px;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            display: inline-block;
+            letter-spacing: 2px;
+        }
+
+        .btn-primary {
+            background: #588157;
+            color: #ffffff;
+            box-shadow: 0 8px 24px rgba(88, 129, 87, 0.25);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 32px rgba(88, 129, 87, 0.35);
+            background: #3a5a40;
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: #588157;
+            border: 2px solid #588157;
+        }
+
+        .btn-secondary:hover {
+            background: #588157;
+            color: #ffffff;
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(88, 129, 87, 0.25);
+        }
+
+        .divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #A3B18A 50%, transparent);
+            margin: 50px auto;
+            max-width: 400px;
+        }
+
+        .whatsapp-cta {
+            background: transparent;
+            padding: 40px 20px;
+            border-radius: 0;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .whatsapp-title {
+            font-size: clamp(20px, 2.5vw, 28px);
+            font-weight: 700;
+            color: #344E41;
+            margin-bottom: 16px;
+        }
+
+        .whatsapp-text {
+            font-size: clamp(14px, 1.6vw, 16px);
+            font-weight: 300;
+            color: #344E41;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        .btn-whatsapp {
+            background: #588157;
+            color: #ffffff;
+            font-weight: 600;
+            padding: 18px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            font-family: 'Montserrat', sans-serif;
+            font-size: clamp(14px, 1.5vw, 15px);
+            letter-spacing: 1px;
+            box-shadow: 0 8px 24px rgba(88, 129, 87, 0.25);
+        }
+
+        .btn-whatsapp:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 32px rgba(88, 129, 87, 0.35);
+            background: #3a5a40;
+        }
+
+        .whatsapp-icon {
+            font-size: 22px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .welcome-container {
+                padding: 60px 30px;
+            }
+
+            .logo-welcome {
+                max-width: 200px;
+                margin-bottom: 30px;
+            }
+
+            .logo-container {
+                margin-bottom: 50px;
+            }
+
+            .brand-subtitle {
+                letter-spacing: 4px;
+                margin-bottom: 40px;
+            }
+
+            .brand-message {
+                margin-bottom: 60px;
+            }
+
+            .services-summary {
+                margin-bottom: 50px;
+            }
+
+            .services-title {
+                letter-spacing: 3px;
+            }
+
+            .buttons-container {
+                flex-direction: column;
+                gap: 16px;
+                margin-bottom: 60px;
+            }
+
+            .btn {
+                width: 100%;
+                max-width: 400px;
+            }
+
+            .divider {
+                margin: 40px auto;
+            }
+
+            .whatsapp-cta {
+                padding: 30px 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .welcome-container {
+                padding: 40px 20px;
+            }
+
+            .logo-welcome {
+                max-width: 160px;
+            }
+
+            .brand-subtitle {
+                letter-spacing: 2px;
+            }
+
+            .service-tag {
+                padding: 10px 20px;
+            }
+
+            .btn {
+                padding: 16px 36px;
+            }
+        }
+
+        @media (min-width: 1400px) {
+            .welcome-container {
+                padding: 100px 80px;
+            }
+
+            .logo-welcome {
+                max-width: 320px;
+            }
+        }
+    </style>
 </head>
 <body>
-    <div class="mobile-frame">
-        <div class="bp-display" id="bp-display">BP: Default</div>
-        <div class="main-container">
+    <div class="welcome-container">
+        <div class="logo-container">
+            <img src="logo superior derecho.svg" alt="Breaking Bugs Logo" class="logo-welcome">
+            <h1 class="brand-title">Breaking Bugs</h1>
+            <p class="brand-subtitle">Control de Plagas</p>
+        </div>
 
-            <!-- Cortina de transición -->
-            <div class="yellow-curtain" id="yellow-curtain">
-                <div class="curtain-content">
-                    <div class="curtain-text">CONTROL DE PLAGAS</div>
-                </div>
+        <p class="brand-message">
+            Protección profesional certificada para tu hogar o empresa. Eliminamos plagas con tecnología de vanguardia y productos seguros.
+        </p>
+
+        <div class="buttons-container">
+            <a href="home.html" class="btn btn-primary">Ingresar al Sitio</a>
+            <a href="servicios.html" class="btn btn-secondary">Ver Servicios</a>
+        </div>
+
+        <div class="services-summary">
+            <h2 class="services-title">Nuestros Servicios</h2>
+            <div class="services-list">
+                <span class="service-tag">Desratización</span>
+                <span class="service-tag">Desinsectación</span>
+                <span class="service-tag">Desinfección</span>
+                <span class="service-tag">Sanitización</span>
             </div>
+        </div>
 
-            <!-- Header -->
-            <header class="header">
-                <div class="header-left">
-                    <img src="logo superior derecho.svg" alt="Breaking Bugs" class="logo-header" aria-hidden="true">
-                    <div class="logo-text-overlay">
-                        <div class="logo-letter-b">B</div>
-                        <div class="logo-text-bottom">
-                            <div class="logo-breaking">BREAKING</div>
-                            <div class="logo-bugs">BUGS</div>
-                        </div>
-                    </div>
-                    <div class="control-plagas-text">CONTROL DE PLAGAS</div>
-                </div>
-                <div class="header-center"></div>
-                <div class="header-right" id="menu-button">MENU</div>
-                <div class="dropdown-menu" id="dropdown-menu">
-                    <div class="menu-item" data-page="servicios">SERVICIOS</div>
-                    <div class="menu-item" data-page="sectores">SECTORES</div>
-                    <div class="menu-item" data-page="nosotros">NOSOTROS</div>
-                    <div class="menu-item" data-page="contacto">CONTACTO</div>
-                </div>
-            </header>
+        <div class="divider"></div>
 
-            <!-- Contenido principal -->
-            <main class="main-content-new">
-
-                <!-- SECCIÓN 1: CARRUSEL DE INSECTOS -->
-                <section class="carousel-section">
-
-                    <!-- Contenedor del carrusel -->
-                    <div class="carousel-container">
-                        <div class="carousel-track" id="carousel-track">
-
-                            <!-- Servicio 1: DESRATIZACIÓN -->
-                            <div class="carousel-item" data-service="desratizacion">
-                                <img src="assets/iconos/icono ratas.svg" alt="Desratización" class="insect-icon">
-                            </div>
-
-                            <!-- Servicio 2: DESINSECTACIÓN (CENTRO INICIAL) -->
-                            <div class="carousel-item carousel-item-center" data-service="desinsectacion">
-                                <img src="assets/iconos/icono desinsectación.svg" alt="Desinsectación" class="insect-icon">
-                            </div>
-
-                            <!-- Servicio 3: DESINFECCIÓN -->
-                            <div class="carousel-item" data-service="desinfeccion">
-                                <img src="assets/iconos/Icono desinfección.svg" alt="Desinfección" class="insect-icon">
-                            </div>
-
-                            <!-- Servicio 4: SANITIZACIÓN -->
-                            <div class="carousel-item" data-service="sanitizacion">
-                                <img src="assets/iconos/Icono sanitización.svg" alt="Sanitización" class="insect-icon">
-                            </div>
-
-                        </div>
-                    </div>
-
-                    <!-- Nombre del servicio -->
-                    <div class="insect-name-container">
-                        <div class="insect-name" id="insect-name">Desinsectación</div>
-                    </div>
-
-                </section>
-
-                <!-- SECCIÓN 2: LAYOUT EDITORIAL -->
-                <section class="editorial-section">
-
-                    <div class="editorial-grid">
-
-                        <!-- Columna izquierda: Título grande -->
-                        <div class="editorial-left">
-                            <h1 class="editorial-title">PROTECCIÓN<br>ABSOLUTA</h1>
-                            <p class="editorial-subtitle">Soluciones profesionales para espacios libres de plagas</p>
-                        </div>
-
-                        <!-- Columna derecha: Texto informativo -->
-                        <div class="editorial-right">
-                            <p class="editorial-text">
-                                Soluciones certificadas que garantizan espacios seguros y saludables. Nuestro equipo utiliza tecnología de vanguardia y productos autorizados por el ISP para resultados duraderos y efectivos.
-                            </p>
-                            <p class="editorial-text">
-                                Cada intervención es diseñada específicamente para las necesidades de tu espacio, garantizando mínima interrupción y máxima efectividad. Cumplimos con todas las normativas MINSAL y contamos con certificaciones que respaldan nuestro trabajo profesional.
-                            </p>
-                        </div>
-
-                    </div>
-
-                </section>
-
-                <!-- SECCIÓN 3: CERTIFICACIONES -->
-                <section class="certifications-section">
-                    <div class="cert-container">
-                        <div class="cert-badge">
-                            <div class="cert-icon">✓</div>
-                            <div class="cert-info">
-                                <div class="cert-label">Resolución Sanitaria</div>
-                                <div class="cert-number">N° 2213518407</div>
-                            </div>
-                        </div>
-                        <div class="cert-badge">
-                            <div class="cert-icon">✓</div>
-                            <div class="cert-info">
-                                <div class="cert-label">Credencial SAG</div>
-                                <div class="cert-number">Certificado</div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- SECCIÓN 4: SLIDER DE FOTOS -->
-                <section class="photo-slider-section">
-                    <div class="photo-slider-container">
-                        <div class="photo-slider-track" id="photoSlider">
-                            <div class="photo-slide">
-                                <div class="photo-placeholder">
-                                    <span>FOTO 1</span>
-                                    <small>Equipo en acción</small>
-                                </div>
-                            </div>
-                            <div class="photo-slide">
-                                <div class="photo-placeholder">
-                                    <span>FOTO 2</span>
-                                    <small>Trabajo realizado</small>
-                                </div>
-                            </div>
-                            <div class="photo-slide">
-                                <div class="photo-placeholder">
-                                    <span>FOTO 3</span>
-                                    <small>Certificaciones</small>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="photo-slider-dots" id="photoSliderDots"></div>
-                </section>
-
-                <!-- SECCIÓN 5: TU TRANQUILIDAD -->
-                <section class="tranquilidad-section">
-                    <div class="tranquilidad-content">
-                        <h2 class="tranquilidad-title">Tu tranquilidad,<br>nuestra prioridad</h2>
-                        <p class="tranquilidad-text">
-                            Entendemos que un problema de plagas puede afectar tu negocio, tu salud y tu bienestar. Por eso ofrecemos respuestas rápidas, soluciones efectivas y seguimiento continuo para garantizar espacios libres de plagas a largo plazo.
-                        </p>
-                        <a href="contacto.html" class="btn-cotizacion">Solicitar Cotización Gratis</a>
-                    </div>
-                </section>
-
-                <!-- SECCIÓN 6: COMPROMISO -->
-                <section class="compromiso-section">
-                    <div class="compromiso-content">
-                        <p class="compromiso-text">
-                            "Trabajamos para que puedas vivir y trabajar sin preocupaciones"
-                        </p>
-                    </div>
-                </section>
-
-                <!-- SECCIÓN 7: CTA FINAL -->
-                <section class="cta-final-section">
-                    <div class="cta-final-content">
-                        <h2 class="cta-final-title">¿Listo para un espacio libre de plagas?</h2>
-                        <p class="cta-final-subtitle">Contáctanos hoy y recibe una evaluación gratuita</p>
-                        <div class="cta-buttons">
-                            <a href="https://wa.me/56978630975" class="btn-cta-primary" target="_blank">Contactar Ahora</a>
-                            <a href="servicios.html" class="btn-cta-secondary">Ver Servicios</a>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- FOOTER -->
-                <footer class="footer-home">
-                    <div class="footer-contact">
-                        <a href="tel:+56978630975" class="footer-link">📞 +569 7863 0975</a>
-                        <span class="footer-separator">|</span>
-                        <a href="mailto:bugsbreaking@gmail.com" class="footer-link">📧 bugsbreaking@gmail.com</a>
-                    </div>
-                    <div class="footer-legal">
-                        <p>© 2025 Breaking Bugs - Control de Plagas Profesional. Todos los derechos reservados.</p>
-                        <p class="footer-rut">COPLASAN LIMITADA | RUT: 77.584.666-6</p>
-                    </div>
-                </footer>
-
-            </main>
-
+        <div class="whatsapp-cta">
+            <h2 class="whatsapp-title">¿Tienes una emergencia?</h2>
+            <p class="whatsapp-text">Contáctanos ahora y te responderemos en minutos</p>
+            <a href="https://wa.me/56978630975?text=Hola%2C%20necesito%20ayuda%20urgente%20con%20control%20de%20plagas" class="btn-whatsapp" target="_blank" rel="noopener">
+                <span class="whatsapp-icon">📱</span>
+                Contactar por WhatsApp
+            </a>
         </div>
     </div>
-
-    <script src="index-carousel.js"></script>
 </body>
 </html>
