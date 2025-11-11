@@ -81,7 +81,8 @@ body {
     background-color: var(--color-white);
     border-radius: calc(20px * var(--scale));
     border: calc(0.5px * var(--scale)) solid var(--color-black);
-    overflow: hidden;
+    overflow-y: auto;
+    overflow-x: hidden;
     display: flex;
     flex-direction: column;
 }
